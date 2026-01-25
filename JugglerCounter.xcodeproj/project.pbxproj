@@ -11,9 +11,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A81E40AD2F1B81F4009D300D /* JugglerCounter */ = {
+		A81E40AD2F1B81F4009D300D /* Myjanken */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = JugglerCounter;
+			path = Myjanken;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		A81E40A22F1B81F4009D300D = {
 			isa = PBXGroup;
 			children = (
-				A81E40AD2F1B81F4009D300D /* JugglerCounter */,
+				A81E40AD2F1B81F4009D300D /* Myjanken */,
 				A81E40AC2F1B81F4009D300D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A81E40AD2F1B81F4009D300D /* JugglerCounter */,
+				A81E40AD2F1B81F4009D300D /* Myjanken */,
 			);
 			name = JugglerCounter;
 			packageProductDependencies = (
