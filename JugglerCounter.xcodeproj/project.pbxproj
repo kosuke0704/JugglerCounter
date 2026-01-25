@@ -6,14 +6,43 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A84D6C9B2F3210F40098AF43 /* MyjankenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D6C982F3210F40098AF43 /* MyjankenApp.swift */; };
+		A84D6C9C2F3210F40098AF43 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A84D6C952F3210F40098AF43 /* .gitignore */; };
+		A84D6C9D2F3210F40098AF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84D6C962F3210F40098AF43 /* Assets.xcassets */; };
+		A84D6CA32F32158A0098AF43 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A84D6CA22F32158A0098AF43 /* README.md */; };
+		A84D6CAD2F3371E40098AF43 /* CoinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D6CA92F3371E40098AF43 /* CoinType.swift */; };
+		A84D6CAE2F3371E40098AF43 /* JugglerMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D6CAC2F3371E40098AF43 /* JugglerMachine.swift */; };
+		A84D6CAF2F3371E40098AF43 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D6CAA2F3371E40098AF43 /* GameSession.swift */; };
+		A84D6CB02F3371E40098AF43 /* GameSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D6CAB2F3371E40098AF43 /* GameSessionStore.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A81E40AB2F1B81F4009D300D /* JugglerCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JugglerCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A84D6C952F3210F40098AF43 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A84D6C962F3210F40098AF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A84D6C982F3210F40098AF43 /* MyjankenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyjankenApp.swift; sourceTree = "<group>"; };
+		A84D6CA22F32158A0098AF43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A84D6CA92F3371E40098AF43 /* CoinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinType.swift; sourceTree = "<group>"; };
+		A84D6CAA2F3371E40098AF43 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		A84D6CAB2F3371E40098AF43 /* GameSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionStore.swift; sourceTree = "<group>"; };
+		A84D6CAC2F3371E40098AF43 /* JugglerMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JugglerMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A81E40AD2F1B81F4009D300D /* Myjanken */ = {
+		A84D6CA02F3215140098AF43 /* Components */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Myjanken;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A84D6CA12F32151D0098AF43 /* Styles */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		A84D6CF32F3378520098AF43 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +61,7 @@
 		A81E40A22F1B81F4009D300D = {
 			isa = PBXGroup;
 			children = (
-				A81E40AD2F1B81F4009D300D /* Myjanken */,
+				A84D6C992F3210F40098AF43 /* Myjanken */,
 				A81E40AC2F1B81F4009D300D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +72,32 @@
 				A81E40AB2F1B81F4009D300D /* JugglerCounter.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A84D6C992F3210F40098AF43 /* Myjanken */ = {
+			isa = PBXGroup;
+			children = (
+				A84D6CF32F3378520098AF43 /* Views */,
+				A84D6CA12F32151D0098AF43 /* Styles */,
+				A84D6CA02F3215140098AF43 /* Components */,
+				A84D6C9E2F3210FC0098AF43 /* Models */,
+				A84D6C952F3210F40098AF43 /* .gitignore */,
+				A84D6C962F3210F40098AF43 /* Assets.xcassets */,
+				A84D6C982F3210F40098AF43 /* MyjankenApp.swift */,
+				A84D6CA22F32158A0098AF43 /* README.md */,
+			);
+			path = Myjanken;
+			sourceTree = "<group>";
+		};
+		A84D6C9E2F3210FC0098AF43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A84D6CA92F3371E40098AF43 /* CoinType.swift */,
+				A84D6CAA2F3371E40098AF43 /* GameSession.swift */,
+				A84D6CAB2F3371E40098AF43 /* GameSessionStore.swift */,
+				A84D6CAC2F3371E40098AF43 /* JugglerMachine.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,7 +116,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A81E40AD2F1B81F4009D300D /* Myjanken */,
+				A84D6CA02F3215140098AF43 /* Components */,
+				A84D6CA12F32151D0098AF43 /* Styles */,
+				A84D6CF32F3378520098AF43 /* Views */,
 			);
 			name = JugglerCounter;
 			packageProductDependencies = (
@@ -109,6 +166,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84D6CA32F32158A0098AF43 /* README.md in Resources */,
+				A84D6C9C2F3210F40098AF43 /* .gitignore in Resources */,
+				A84D6C9D2F3210F40098AF43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84D6CAD2F3371E40098AF43 /* CoinType.swift in Sources */,
+				A84D6CAE2F3371E40098AF43 /* JugglerMachine.swift in Sources */,
+				A84D6CAF2F3371E40098AF43 /* GameSession.swift in Sources */,
+				A84D6CB02F3371E40098AF43 /* GameSessionStore.swift in Sources */,
+				A84D6C9B2F3210F40098AF43 /* MyjankenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
