@@ -151,32 +151,99 @@ struct GameSession: Identifiable, Codable {
 struct ContentView: View {
     @State private var selectedTab = 0
     @State private var gameSessions: [GameSession] = []
+    @State private var isShowingSplash = true
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            GameHistoryView(gameSessions: $gameSessions)
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("ホーム")
-                }
-                .tag(0)
+        ZStack {
+            // メインコンテンツ
+            TabView(selection: $selectedTab) {
+                GameHistoryView(gameSessions: $gameSessions)
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("ホーム")
+                    }
+                    .tag(0)
+                
+                SettingJudgmentView()
+                    .tabItem {
+                        Image(systemName: "chart.bar.fill")
+                        Text("設定判別")
+                    }
+                    .tag(1)
+                
+                BrowserView()
+                    .tabItem {
+                        Image(systemName: "globe")
+                        Text("ブラウザ")
+                    }
+                    .tag(2)
+            }
+            .preferredColorScheme(.dark)
+            .tint(AppColors.accent)
             
-            SettingJudgmentView()
-                .tabItem {
-                    Image(systemName: "chart.bar.fill")
-                    Text("設定判別")
-                }
-                .tag(1)
-            
-            BrowserView()
-                .tabItem {
-                    Image(systemName: "globe")
-                    Text("ブラウザ")
-                }
-                .tag(2)
+            // スプラッシュ画面
+            if isShowingSplash {
+                SplashScreenView()
+                    .transition(.opacity)
+                    .zIndex(1)
+            }
         }
-        .preferredColorScheme(.dark)
-        .tint(AppColors.accent)
+        .onAppear {
+            // 2秒後にスプラッシュ画面を非表示
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation(.easeOut(duration: 0.5)) {
+                    isShowingSplash = false
+                }
+            }
+        }
+    }
+}
+
+// MARK: - スプラッシュ画面
+struct SplashScreenView: View {
+    @State private var isAnimating = false
+    
+    var body: some View {
+        ZStack {
+            // 背景
+            AppColors.background
+                .ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                // ロゴアニメーション
+                VStack(spacing: 8) {
+                    Text("JUGGLER")
+                        .font(.system(size: 48, weight: .black, design: .rounded))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [AppColors.accent, AppColors.accent.opacity(0.7)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .scaleEffect(isAnimating ? 1.0 : 0.8)
+                        .opacity(isAnimating ? 1.0 : 0.0)
+                    
+                    Text("COUNTER")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(AppColors.textSecondary)
+                        .tracking(6)
+                        .opacity(isAnimating ? 1.0 : 0.0)
+                }
+                
+                // インジケーター（オプション）
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(AppColors.accent)
+                    .scaleEffect(1.2)
+                    .opacity(isAnimating ? 1.0 : 0.0)
+            }
+        }
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.8)) {
+                isAnimating = true
+            }
+        }
     }
 }
 
